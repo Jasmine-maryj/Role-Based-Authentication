@@ -1,4 +1,4 @@
-package com.dev.rolebasedauthentication;
+package com.dev.rolebasedauthorization;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.dev.rolebasedauthentication.entity;
+package com.dev.rolebasedauthorization.entity;
 
 
 import lombok.AllArgsConstructor;

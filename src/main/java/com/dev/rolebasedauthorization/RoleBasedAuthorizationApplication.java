@@ -1,13 +1,13 @@
-package com.dev.rolebasedauthentication;
+package com.dev.rolebasedauthorization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RoleBasedAuthenticationApplication {
+public class RoleBasedAuthorizationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RoleBasedAuthenticationApplication.class, args);
+		SpringApplication.run(RoleBasedAuthorizationApplication.class, args);
 	}
 
 }

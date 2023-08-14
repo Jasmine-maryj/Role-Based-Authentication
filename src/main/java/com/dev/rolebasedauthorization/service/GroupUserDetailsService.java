@@ -1,14 +1,16 @@
-package com.dev.rolebasedauthentication.service;
+package com.dev.rolebasedauthorization.service;
 
-import com.dev.rolebasedauthentication.entity.User;
-import com.dev.rolebasedauthentication.repository.UserRepository;
+import com.dev.rolebasedauthorization.entity.User;
+import com.dev.rolebasedauthorization.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class GroupUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -17,6 +19,7 @@ public class GroupUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);
-        return null;
+        return user.map(GroupUserDetails::new)
+                .orElseThrow(() -> new UsernameNotFoundException("UsernameNotFoundException"));
     }
 }
